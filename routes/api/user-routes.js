@@ -21,8 +21,8 @@ router
   .put(updateUser)
   .delete(deleteUser);
 
-// routes for FRIENDS
-// /api/users/:userId/friends/:friendId
+// routes for friends
+
 router
   .route('/:userId/friends/:friendId')
   .post(addNewFriend)
