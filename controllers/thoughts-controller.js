@@ -48,7 +48,7 @@ const thoughtController = {
     .catch(err => res.json(err));
   }, 
 
- 
+
   updateThought({ params, body }, res) {
     Thought.findOneAndUpdate({ _id: params.thoughtId }, body, { new: true, runValidators: true })
     .then(dbUpdatedThoughtData => {
@@ -61,7 +61,7 @@ const thoughtController = {
     .catch(err => res.json(err));
   },
 
-  // DELETE thought by _id
+
   deleteThought({ params }, res) {
     Thought.findOneAndDelete({ _id: params.thoughtId })
     .then(dbDeletedData => {
@@ -74,8 +74,7 @@ const thoughtController = {
     .catch(err => res.json(err));
   },
 
-  
-  
+
   addReaction({ params, body }, res) {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
@@ -91,7 +90,7 @@ const thoughtController = {
     }) 
     .catch(err => res.json(err));
   },  
-
+  
   deleteReaction({ params }, res) {
     console.log('delete reactions params:', params)
     Thought.findOneAndUpdate(
@@ -105,3 +104,4 @@ const thoughtController = {
 }
 
 module.exports = thoughtController;
+
