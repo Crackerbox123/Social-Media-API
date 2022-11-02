@@ -41,6 +41,7 @@ const ThoughtSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+    // ADD GETTER / UTIL FUNCTION
     get: timestamp => dateFormat(timestamp)
   },
   username: {
@@ -52,7 +53,7 @@ const ThoughtSchema = new Schema({
 {
   toJSON: {
     getters: true,
-    virtuals: true
+    validators: true
   },
   id: false
 });
